@@ -45,6 +45,8 @@ char*** file_process( char* file_name, int n_rows, int size_of_data)
         // store the line in  a buffer 
         fgets(line, MAX_LINE_LENGTH, file);
 
+        line[strcspn(line,"\n")] = '\0';
+
         // split the string by comma
         char *split = strtok(line, ",");
 
